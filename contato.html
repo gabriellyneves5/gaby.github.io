@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Fale Conosco!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabrielly Neves">
+    <meta name="description" content="trabalho acadêmico de PW1">
+    <meta name="keywords" content="astronomia, trabalho, galáxia, acadêmico">
+    <link rel="icon" type="image/png" href="img/telefone.png">
+    <link rel="stylesheet" type="text/css" href="css/astronomia.css">
+    <script language="javascript" type="text/javascript">
+        function validar() {
+            var nome = document.form1.name.value;
+            var telefone = document.form1.phone.value;
+            var email = document.form1.email.value;
+
+            if (nome == "") {
+                alert("Preencha o seu nome");
+                document.form1.name.focus();
+                return false;
+            }
+
+            if (telefone == "") {
+                alert("Preencha o seu telefone");
+                document.form1.phone.focus();
+                return false;
+            }
+
+            if (email == "") {
+                alert("Preencha com seu email");
+                document.form1.email.focus();
+                return false;
+            }
+
+            // Additional validation for phone number format
+            var phonePattern = /^\(\d{2}\)\d{5}-\d{4}$/;
+            if (!phonePattern.test(telefone)) {
+                alert("Formato de telefone inválido. Use o formato (**)*****-****");
+                document.form1.phone.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="all">
+        <ul class="menu">
+            <li><h2><a href="index.html">HOME</a></h2></li>
+            <li><h2><a href="sobre.html">SOBRE</a></h2></li>
+            <li><h2><a href="curiosidades.html">CURIOSIDADES</a></h2></li>
+            <li><h2><a href="galeria.html">GALERIA</a></h2></li>
+            <li><h2><a href="bibliografia.html">FONTES</a></h2></li>
+            <li><h2><a href="contato.html">CONTATO</a></h2></li>
+        </ul>
+    </div>
+    <br><br><hr><br><br>
+    <center>
+        <h1>Preencha os dados abaixo:</h1>
+        <form name="form1" method="post" action="form1.html" onsubmit="return validar()">
+            Nome:<input id="name" type="text" size="60" placeholder="Campo obrigatório. Preencha aqui seu nome!" required name="name"/><br>
+            Telefone:<input type="tel" required="required" size="60" name="phone" placeholder="(**)*****-****"/><br>
+            Email:<input type="email" required="required" size="60" class="input-text" placeholder="Campo obrigatório. Preencha aqui seu email!" name="email"/><br>
+            Nota para o site:
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select><br><br>
+            Comentário:<br><br>
+            <textarea cols="60" rows="10"></textarea>
+            <br><br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Cancelar">
+        </form>
+        <br><hr><br>
+        <h5>Gabrielly Carolina 2024 - &copy; Todos os direitos reservados</h5>
+    </center>
+</body>
+</html>
